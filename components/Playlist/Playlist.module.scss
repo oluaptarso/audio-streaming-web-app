@@ -1,0 +1,21 @@
+.playlistContainer {
+  @apply p-4;
+  @apply border-2 rounded border-violet-600 shadow-md shadow-violet-200;
+
+  h2 {
+    @apply mb-4;
+    @apply text-lg text-center text-violet-600;
+  }
+
+  .playlistItemContainer {
+    @apply p-1 px-2;
+    @apply bg-white;
+    @apply border-2 rounded border-violet-600 shadow-md shadow-violet-200 last-of-type:mb-0 mb-2;
+  }
+
+  .emptyPlaylist {
+    @apply p-1 px-2;
+    @apply text-center text-violet-400;
+    @apply border-2 border-dashed rounded border-violet-200;
+  }
+}

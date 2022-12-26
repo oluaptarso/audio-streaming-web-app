@@ -1,0 +1,13 @@
+.playlistItem {
+  @apply flex justify-between;  
+  .content {
+    @apply text-violet-600 flex items-center gap-1;
+    
+    &.playing {
+      @apply text-fuchsia-500;
+    }
+    .author {
+      @apply font-bold;
+    }
+  }
+}
