@@ -1,0 +1,10 @@
+.actionButton {
+  @apply p-1 text-violet-400;
+  @apply outline-none focus:outline-none active:outline-none;
+  @apply hover:scale-125 hover:text-violet-600;
+  @apply active:scale-110;
+  @apply transition duration-150 ease-in-out;
+  svg {
+    @apply h-5 w-5;
+  }  
+}
