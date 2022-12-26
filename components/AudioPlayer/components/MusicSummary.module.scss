@@ -1,0 +1,10 @@
+.summary {
+  @apply text-violet-400;
+  .author {
+    @apply font-bold text-violet-600;
+  }
+
+  .title {
+    @apply text-violet-600;
+  }
+}
