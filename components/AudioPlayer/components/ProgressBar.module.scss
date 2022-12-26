@@ -1,0 +1,35 @@
+.trackerContainer {
+  @apply relative w-full border-2 border-violet-600 rounded h-4;
+
+  .tracker {
+    @apply absolute w-full h-full py-0.5;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+
+    .trackerBackground {
+      @apply h-2 rounded-sm bg-gradient-to-r from-indigo-300 via-purple-500 to-violet-600;
+    }
+  }
+
+  .thumbContainer {
+    @apply outline-none focus:outline-none active:outline-none;
+  }
+
+  .thumb {
+    @apply bg-white rounded-full border-2 border-violet-600 h-6 w-6 p-0.5;
+    @apply transition-all ease-in-out duration-200;
+    @apply opacity-0 scale-0;
+    @apply outline-none focus:outline-none active:outline-none;
+    @apply before:block before:h-full before:w-full before:rounded-full before:bg-violet-500;
+
+    &.holding {
+      @apply opacity-100 scale-100 before:bg-violet-600 shadow-md shadow-violet-300;
+    }
+  }
+
+  &:hover {
+    .thumb {
+      @apply opacity-100 scale-100 shadow-md shadow-violet-300;
+    }
+  }
+}

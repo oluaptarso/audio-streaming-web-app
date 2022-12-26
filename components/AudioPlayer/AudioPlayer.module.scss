@@ -1,0 +1,28 @@
+.playerContainer {
+  @apply fixed bottom-0 w-full p-6;
+  @apply border-t border-violet-200;
+  height: 210px;
+  box-shadow: 0px 0px 10px 0px rgb(237 233 254);
+  .player {
+    @apply container mx-auto p-4 relative; 
+    @apply flex flex-col justify-center items-center;
+    @apply border-2 rounded border-violet-600 shadow-md shadow-violet-200;
+
+    .summary {
+      @apply text-center;
+    }
+
+    .playPauseButton {
+      @apply my-3;
+    }
+
+    .footerControls{
+      @apply flex justify-between w-full;
+      @apply text-sm font-semibold text-violet-300;
+
+      span {
+        @apply w-9;
+      }
+    }
+  }
+}

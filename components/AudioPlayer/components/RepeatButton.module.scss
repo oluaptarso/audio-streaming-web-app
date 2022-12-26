@@ -1,0 +1,12 @@
+.repeatButton {
+  @apply p-1 text-violet-300;
+  @apply outline-none focus:outline-none active:outline-none;
+
+  svg {
+    @apply h-5 w-5;
+  }
+
+  &.active {
+    @apply text-violet-600;
+  }
+}

@@ -1,0 +1,19 @@
+.playPauseButton {
+  @apply rounded-full p-1;
+  @apply shadow-md border-violet-600 border-2;
+  @apply text-violet-600 shadow-violet-300;
+  @apply hover:border-violet-700 hover:shadow-lg hover:shadow-violet-300 hover:scale-110;
+  @apply focus:border-violet-700 focus:shadow-lg focus:shadow-violet-300 focus:outline-none focus:ring-0;
+  @apply active:border-violet-800 active:shadow-lg active:shadow-violet-300;
+  @apply transition duration-150 ease-in-out;
+
+  path{ stroke-width: 50px; }
+
+  &[disabled] {
+    @apply border-violet-400 text-violet-400 cursor-default;
+  }
+
+  .playIcon {
+    @apply pl-0.5;    
+  }
+}
