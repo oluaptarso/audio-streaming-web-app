@@ -1,0 +1,15 @@
+.musicListSkeleton {
+  @apply animate-pulse;
+  li {
+    @apply flex justify-between;
+    .content {
+      @apply rounded bg-violet-100 h-6 w-28;
+    }
+    .actions {
+      @apply flex gap-1;
+      .action {
+        @apply rounded bg-violet-100 h-6 w-6;
+      }
+    }
+  }
+}

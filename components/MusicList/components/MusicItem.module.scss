@@ -1,0 +1,9 @@
+.musicItem {
+  @apply flex justify-between;
+  .content {
+    @apply text-violet-600 flex items-center gap-1;
+    .author {
+      @apply font-bold;
+    }
+  }
+}
