@@ -2,11 +2,11 @@ import {
   addMusicToPlaylist,
   playMusic,
 } from "providers/audioPlayerSlice";
-import { IMusic } from "hooks/useAvailableMusics";
 import { IoListOutline, IoPlayOutline } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import ActionButton from "components/ActionButton/ActionButton";
 import styles from "./MusicItem.module.scss";
+import { IMusic } from "interfaces/music";
 
 export type MusicItemProps = {
   className?: string;
