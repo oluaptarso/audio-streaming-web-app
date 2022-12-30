@@ -1,5 +1,5 @@
 .playlistContainer {
-  @apply p-4;
+  @apply p-4 pb-2;
   @apply border-2 rounded border-violet-600 shadow-md shadow-violet-200;
 
   h2 {
@@ -10,7 +10,7 @@
   .playlistItemContainer {
     @apply p-1 px-2;
     @apply bg-white;
-    @apply border-2 rounded border-violet-600 shadow-md shadow-violet-200 last-of-type:mb-0 mb-2;
+    @apply border-2 rounded border-violet-600 shadow-md shadow-violet-200 mb-2;
   }
 
   .emptyPlaylist {
