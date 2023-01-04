@@ -1,5 +1,5 @@
 # Audio Streaming Web Application
-This is a Next.js web application bootstrapped with create-next-app, and is a part of [Audio Streaming](https://github.com/oluaptarso/audio-streaming-nestjs-react-redux).
+This is a Next.js web application bootstrapped with create-next-app, and is a part of [Audio Streaming](https://github.com/oluaptarso/audio-streaming-meta).
 
 ## Tech
 - [React.js](https://reactjs.org) on [Next.js](https://nextjs.org) (TypeScript);
