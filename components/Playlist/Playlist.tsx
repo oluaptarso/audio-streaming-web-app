@@ -50,7 +50,7 @@ const Playlist: React.FC<PlaylistProps> = ({ className }) => {
               <ul ref={provided.innerRef} {...provided.droppableProps}>
                 {playlist.map((music, i) => (
                   <Draggable
-                    key={music.id.toString()}
+                    key={music.id}
                     draggableId={music.id.toString()}
                     index={i}
                   >
