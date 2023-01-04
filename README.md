@@ -1,8 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Audio Streaming Web Application
+This is a Next.js web application bootstrapped with create-next-app, and is a part of [Audio Streaming](https://github.com/oluaptarso/audio-streaming-nestjs-react-redux).
+
+## Tech
+- [React.js](https://reactjs.org) on [Next.js](https://nextjs.org) (TypeScript);
+- [React Redux](https://react-redux.js.org);
+- [Redux Toolkit](https://redux-toolkit.js.org);
+- [Tailwind CSS](https://tailwindcss.com);
+- [React Icons](https://react-icons.github.io/react-icons);
+- [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd);
+- [react-range](https://github.com/tajo/react-range).
+
+## Requirements
+- Node.js - 16.18.1;
+- npm - 8.19.2.
+- [API](https://github.com/oluaptarso/audio-streaming-nestjs) running;
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+```bash
+npm install
+# or
+yarn
+```
+
+Then, create the .env file (only if your API is not running on localhost:3001):
+```bash
+cp .env.sample .env
+```
+
+Finally, run the development server:
 
 ```bash
 npm run dev
@@ -12,23 +39,16 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Run with docker
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+First, build the container:
+```bash
+docker build -t audio-streaming-webapp .
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Then, run your container:
+```bash
+docker run -p 3000:3000 audio-streaming-webapp
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
