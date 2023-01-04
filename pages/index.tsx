@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <div className={styles.homeContainer}>
         <Head>
-          <title>Audio Streaming - Nest.js / Next.js / React / Redux</title>
+          <title>Audio Streaming</title>
           <meta
             name="description"
             content="Audio Streaming - Nest.js / Next.js / React / Redux"
