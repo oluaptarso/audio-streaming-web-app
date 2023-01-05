@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSetState } from "../hooks/useSetState";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/store";
-import {
-  getNextMusic,
-  playMusic,
-} from "./audioPlayerSlice";
+import { getNextMusic, playMusic } from "./audioPlayerSlice";
 
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/readyState
 const HAVE_ENOUGH_DATA = 4;
@@ -18,6 +15,9 @@ interface PlayerState {
   volume: number;
   playing: boolean;
   repeat: boolean;
+  source?: MediaElementAudioSourceNode;
+  analyser?: AnalyserNode;
+  context?: AudioContext;
 }
 
 interface Controls {
@@ -55,7 +55,9 @@ export const AudioProvider: React.FC<React.PropsWithChildren> = ({
 
   const [player, setPlayer] = useState<HTMLAudioElement | null>(null);
 
-  const playlistData = useSelector((state: RootState) => state.audioPlayerStore);
+  const playlistData = useSelector(
+    (state: RootState) => state.audioPlayerStore
+  );
 
   const dispatch = useDispatch();
   //#endregion State/Hooks declaration / initialization
@@ -117,8 +119,6 @@ export const AudioProvider: React.FC<React.PropsWithChildren> = ({
       if (!player) {
         return;
       }
-
-      console.log(lockPlay, player.readyState, player.paused);
 
       if (
         !lockPlay &&
@@ -184,6 +184,7 @@ export const AudioProvider: React.FC<React.PropsWithChildren> = ({
   //#region Initialize player on client
   useEffect(() => {
     const player = new Audio();
+    player.crossOrigin = "anonymous";
     setPlayer(player);
   }, []);
   //#endregion Initialize player on client
@@ -218,11 +219,25 @@ export const AudioProvider: React.FC<React.PropsWithChildren> = ({
   // Play the current music in playlist
   useEffect(() => {
     if (player) {
+      
+      // We must initialize AudioContext after a user interaction
+      if (!playerState.context || !playerState.analyser) {
+        const context = new window.AudioContext();
+        const source = context.createMediaElementSource(player);
+        const analyser = context.createAnalyser();
+        analyser.fftSize = 256;
+
+        source.connect(analyser);
+        source.connect(context.destination);
+
+        setState({ context, analyser, source });
+      }
+      
       if (playlistData.currentMusic) {
         const music = playlistData.currentMusic.music;
         player.src = music.src;
 
-        if (player.paused) player.play();
+        if (player.paused) player.play();        
       } else {
         player.pause();
         player.src = "";
