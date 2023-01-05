@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // Deactivate strict mode to resolve an incompatibility with react-beautiful-dnd
+  reactStrictMode: false,
   swcMinify: true,
   output: 'standalone'
 };
