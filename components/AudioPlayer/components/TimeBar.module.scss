@@ -1,0 +1,15 @@
+.timeBarContainer {
+  @apply relative w-full text-sm font-semibold text-violet-300;
+
+  .time,
+  .duration {
+    @apply absolute;
+  }
+
+  .duration {
+    @apply right-0;
+  }
+  span {
+    @apply w-9;
+  }
+}

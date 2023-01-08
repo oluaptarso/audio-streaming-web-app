@@ -4,18 +4,18 @@ import { useAudioPlayerProvider } from "hooks/useAudioPlayerProvider";
 import { RootState } from "store/store";
 import styles from "./PlayPauseButton.module.scss";
 
-
 export type PlayPauseButtonProps = {
   className?: string;
 };
 
-const PlayPauseButton: React.FC<PlayPauseButtonProps> = ({ className } : PlayPauseButtonProps) => {
+const PlayPauseButton: React.FC<PlayPauseButtonProps> = ({
+  className,
+}: PlayPauseButtonProps) => {
   const { controls, playerState } = useAudioPlayerProvider();
   const currentMusic = useSelector(
     (state: RootState) => state.audioPlayerStore.currentMusic
   );
   const disabled = currentMusic === null;
-
   return (
     <button
       type="button"
