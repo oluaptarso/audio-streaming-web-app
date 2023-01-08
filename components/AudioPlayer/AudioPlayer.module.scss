@@ -1,6 +1,6 @@
 .playerContainer {
   @apply fixed bottom-0 w-full p-6;
-  @apply border-t border-violet-200;
+  @apply border-t border-violet-200 bg-white;
   height: 228px;
   box-shadow: 0px 0px 10px 0px rgb(237 233 254);
   .player {
