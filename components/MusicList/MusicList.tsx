@@ -1,5 +1,3 @@
-"use client";
-
 import { useAvailableMusics } from "hooks/useAvailableMusics";
 import MusicItem from "./components/MusicItem";
 import MusicListSkeleton from "./components/MusicListSkeleton";
