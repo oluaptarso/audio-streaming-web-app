@@ -1,5 +1,3 @@
-"use client";
-
 import { useSelector } from "react-redux";
 import { RootState } from "store/store";
 import {
@@ -20,6 +18,7 @@ export type PlaylistProps = {
 };
 
 const Playlist: React.FC<PlaylistProps> = ({ className }) => {
+  
   const { playlist, currentMusic } = useSelector(
     (state: RootState) => state.audioPlayerStore
   );

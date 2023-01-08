@@ -1,23 +1,33 @@
 .playerContainer {
   @apply fixed bottom-0 w-full p-6;
   @apply border-t border-violet-200;
-  height: 210px;
+  height: 228px;
   box-shadow: 0px 0px 10px 0px rgb(237 233 254);
   .player {
-    @apply container mx-auto p-4 relative; 
-    @apply flex flex-col justify-center items-center;
-    @apply border-2 rounded border-violet-600 shadow-md shadow-violet-200;
+    @apply container relative mx-auto p-4;
+    @apply flex flex-col items-center justify-center;
+    @apply rounded border-2 border-violet-600 shadow-md shadow-violet-200;
 
     .summary {
       @apply text-center;
     }
 
-    .playPauseButton {
-      @apply my-3;
+    .playPauseButtonContainer {
+      @apply relative mb-2 flex flex-wrap content-center justify-center;
+      width: 64px;
+      height: 64px;
+
+      .visualization {
+        @apply absolute z-0;
+        filter: blur(2px);
+      }
+      .playPauseButton {
+        @apply relative z-10;
+      }
     }
 
-    .footerControls{
-      @apply flex justify-between w-full;
+    .footerControls {
+      @apply flex w-full justify-center;
       @apply text-sm font-semibold text-violet-300;
 
       span {

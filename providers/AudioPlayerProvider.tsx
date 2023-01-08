@@ -14,10 +14,7 @@ interface PlayerState {
   time: number;
   volume: number;
   playing: boolean;
-  repeat: boolean;
-  source?: MediaElementAudioSourceNode;
-  analyser?: AnalyserNode;
-  context?: AudioContext;
+  repeat: boolean;  
 }
 
 interface Controls {
@@ -219,20 +216,6 @@ export const AudioProvider: React.FC<React.PropsWithChildren> = ({
   // Play the current music in playlist
   useEffect(() => {
     if (player) {
-      
-      // We must initialize AudioContext after a user interaction
-      if (!playerState.context || !playerState.analyser) {
-        const context = new window.AudioContext();
-        const source = context.createMediaElementSource(player);
-        const analyser = context.createAnalyser();
-        analyser.fftSize = 256;
-
-        source.connect(analyser);
-        source.connect(context.destination);
-
-        setState({ context, analyser, source });
-      }
-      
       if (playlistData.currentMusic) {
         const music = playlistData.currentMusic.music;
         player.src = music.src;

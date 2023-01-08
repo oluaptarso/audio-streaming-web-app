@@ -3,6 +3,7 @@ import AudioPlayer from "components/AudioPlayer/AudioPlayer";
 import MusicList from "components/MusicList/MusicList";
 import Playlist from "components/Playlist/Playlist";
 import styles from "styles/Home.module.scss";
+import AudioVisualization from "components/AudioPlayer/components/AudioVisualization";
 
 export default function Home() {
   return (
@@ -15,8 +16,7 @@ export default function Home() {
             content="Audio Streaming - Nest.js / Next.js / React / Redux"
           />
           <link rel="icon" href="/favicon.ico" />
-        </Head>
-
+        </Head>        
         <main className={styles.main}>
           <MusicList className={styles.musicList} />
           <Playlist className={styles.musicList} />
